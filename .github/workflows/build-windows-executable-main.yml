@@ -54,8 +54,9 @@ jobs:
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          cd D:\a\working-CIF-service\working-CIF-service\dist
         with: 
-          working-directory: ./dist
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: |
             main.exe
