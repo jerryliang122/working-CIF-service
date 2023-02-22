@@ -35,7 +35,7 @@ def mail_template(clasue, address, data):
     </head>
     <body>
     <p>Dear team,<p>
-    <p>This is a {clasue} shipment</p>
+    <p>This is a {clasue} shipment, Pls share price to us </p>
     <p>Address:</p>
     <p>{address}</p>
     <p>Details:</p>

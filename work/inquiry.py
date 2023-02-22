@@ -190,7 +190,7 @@ class work_inquiry:
             # 获取询价编号
             inquiry_number = self.main_window.inquiry_number.text()
             # 设计邮件主题
-            subject = f"{clause} == {inquiry_number}"
+            subject = f"Inquiry {clause} price == {inquiry_number}"
             # 从listview中获取选中代理信息
             selected_indexes = self.main_window.daili_list.selectedIndexes()
             # 获取模板

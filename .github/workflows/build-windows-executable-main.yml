@@ -11,6 +11,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Disable Windows Defender
+        run: |
+          Set-MpPreference -DisableRealtimeMonitoring $true
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -50,14 +54,16 @@ jobs:
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
+        with: 
+          working-directory: ./dist
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: |
-            ./dist/main.exe
-            ./dist/init_conf.zip
+            main.exe
+            init_conf.zip
           asset_name: |
             main.exe
             init_conf.zip
           asset_content_type: |
             application/octet-stream
             application/zip
+
