@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, TEXT
+from sqlalchemy import create_engine, Column, Integer, String, TEXT, BOOLEAN
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import os
@@ -12,6 +12,16 @@ class Agent(Base):
     port = Column(TEXT)
     name = Column(TEXT)
     email = Column(TEXT)
+
+
+# 数据库询价回复跟踪
+class Agent_reply(Base):
+    __tablename__ = "agent_reply"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    serial_number = Column(TEXT)
+    send_time = Column(TEXT)
+    imap = Column(BOOLEAN)
+    confirm = Column(BOOLEAN)
 
 
 # 创建数据库
