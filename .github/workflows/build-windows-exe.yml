@@ -3,7 +3,7 @@ name: Build and Upload Windows Executable
 on:
   push:
     branches:
-      - inquiry
+      - jcf
 
 jobs:
   build:
